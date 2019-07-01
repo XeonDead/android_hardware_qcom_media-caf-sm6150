@@ -58,19 +58,19 @@ include $(CLEAR_VARS)
 libmm-vdec-inc          := $(LOCAL_PATH)/inc
 libmm-vdec-inc          += $(TOP)/system/core/libion/include
 libmm-vdec-inc          += $(TOP)/system/core/libion/kernel-headers
-libmm-vdec-inc          += $(call project-path-for,qcom-media)/mm-video-v4l2/vidc/common/inc
-libmm-vdec-inc          += $(call project-path-for,qcom-media)/mm-core/inc
-libmm-vdec-inc          += $(call project-path-for,qcom-media)/libplatformconfig
+libmm-vdec-inc          += hardware/qcom/media-caf-sm6150/mm-video-v4l2/vidc/common/inc
+libmm-vdec-inc          += hardware/qcom/media-caf-sm6150/mm-core/inc
+libmm-vdec-inc          += hardware/qcom/media-caf-sm6150/libplatformconfig
 libmm-vdec-inc          += $(TARGET_OUT_HEADERS)/adreno
-libmm-vdec-inc      	+= $(call project-path-for,qcom-media)/libc2dcolorconvert
+libmm-vdec-inc      	+= hardware/qcom/media-caf-sm6150/libc2dcolorconvert
 libmm-vdec-inc      	+= $(TARGET_OUT_HEADERS)/mm-video/SwVdec
 libmm-vdec-inc      	+= $(TARGET_OUT_HEADERS)/mm-video/swvdec
 libmm-vdec-inc      	+= $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-libmm-vdec-inc      	+= $(call project-path-for,qcom-media)/libarbitrarybytes/inc
+libmm-vdec-inc      	+= hardware/qcom/media-caf-sm6150/libarbitrarybytes/inc
 
 ifeq ($(PLATFORM_SDK_VERSION), 18)  #JB_MR2
 libmm-vdec-def += -DANDROID_JELLYBEAN_MR2=1
-libmm-vdec-inc += $(call project-path-for,qcom-media)/libstagefrighthw
+libmm-vdec-inc += hardware/qcom/media-caf-sm6150/libstagefrighthw
 endif
 
 # Common Dependencies
@@ -90,7 +90,7 @@ libmm-vdec-def += -DALLOCATE_OUTPUT_NATIVEHANDLE
 
 ifeq ($(ENABLE_HYP),true)
 libmm-vdec-def += -DHYPERVISOR
-libmm-vdec-inc += $(call project-path-for,qcom-media)/hypv-intercept
+libmm-vdec-inc += hardware/qcom/media-caf-sm6150/hypv-intercept
 endif
 # ---------------------------------------------------------------------------------
 # 			Make the Shared library (libOmxVdec)
